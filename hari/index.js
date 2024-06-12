@@ -94,7 +94,7 @@ let b = a;
 console.log(b);
 
 //
-// 25    ====>   
+// 7    ====>   
 
 const data = [
   { id: 1, category: "A", value: 10 },
@@ -143,7 +143,7 @@ console.log(groups);
 ///
 
 
-// 4 ===> 
+// 8 ===> 
 
 const input = [
   {
