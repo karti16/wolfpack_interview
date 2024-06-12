@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "karthik" : "nodemon karthik/index.js",
-    "hari" : "nodemon hari/index.js",
-    "srinivasan" : "nodemon srinivasan/index.js",
-    "karan" : "nodemon karan/index.js"
-    
+    "karthik": "nodemon karthik/index.js",
+    "hari": "nodemon hari/index.js",
+    "srinivasan": "nodemon srinivasan/index.js",
+    "karan": "nodemon karan/index.js"
   },
   "keywords": [],
   "author": "",
