@@ -1,0 +1,20 @@
+{
+  "name": "wolfpack_interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "karthik" : "nodemon karthik/index.js",
+    "hari" : "nodemon hari/index.js",
+    "srinivasan" : "nodemon srinivasan/index.js",
+    "karan" : "nodemon karan/index.js"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.3"
+  }
+}
