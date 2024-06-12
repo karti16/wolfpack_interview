@@ -530,3 +530,88 @@
 //    console.log(toCamelCase('The_Stealth-Warrior')); // Output: "TheStealthWarrior"
 //    console.log(toCamelCase('')); // Output: ""
    
+// =========================================================================================
+
+
+
+// const post = {
+//     title: 'Food Of Bangalore',
+//     caption: 'Hello, explore the best food of bangalore at Sheraton Hotel.',
+//     images: ['', ''],
+//     created_at: 1652069177530,
+//     created_by: {
+//         name: 'Goutam',
+//         contact: '+919999999999',
+//         email: 'goutam@goutambseervi.tech',
+//         features: {
+//             insta_groups: {
+//                 ramp: 10,
+//                 exclude: ['__razorpay__']
+//             }
+//         }
+//     }
+// };
+
+// const key = 'created_by.features.insta_groups'
+
+// function Func(obj, key) {
+
+
+// method : 1====================================
+// let str = key.split('.')
+
+// return str.reduce((a,b)=>  a && a[b] , obj)
+
+
+
+// method:2=====================================
+// if (obj.hasOwnProperty(key)) {
+//     return obj[key]
+// }
+
+// for (let k in obj) {
+//     if (obj[k] && typeof obj[k] === 'object') {
+//         let result = Func(obj[k], key)
+
+//         if (result !== undefined) {
+//             return result;
+//         }
+//     }
+// }
+
+// return undefined
+
+
+
+// }
+
+// console.log(Func(post, key));
+
+
+// =====================================================
+
+
+
+// function CheckConsecutive(num) {
+
+//     let res = 0;
+//     let temp = 0;
+
+//     let int = num.split('')
+//     for (let i = 0; i < num.length; i++) {
+//         if (int[i] === '1') {
+//             temp++;
+//         } else {
+//             temp = 0
+//         }
+//         if (temp > res){
+//             res = temp
+//         }
+//     }
+
+//     return res
+// }
+
+// const num = '1100111100011111111011'
+
+// console.log(CheckConsecutive(num));
