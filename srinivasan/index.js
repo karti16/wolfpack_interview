@@ -615,3 +615,166 @@
 // const num = '1100111100011111111011'
 
 // console.log(CheckConsecutive(num));
+
+
+
+// ============================================================
+
+// function func(num, k) {
+    //     let left = -1;
+    //     let maxLen = 0;
+    //     let zeroCount = 0;
+    //     let a = num.split("");
+    
+    //     for (let right = 0; right < a.length; right++) {
+    //         if (a[right] === '0') {
+    //             zeroCount++;
+    //         }
+    //         // console.log(zeroCount, 'ZERO');
+    //         while (zeroCount > k) {
+    //         // console.log(zeroCount, 'ZERO-----');
+    //             if (a[left] === '0') {
+    //                 zeroCount--;
+    //             }
+    //             left++;
+    //         }
+    //         // console.log(right, 'RIGHT');
+    //         if (maxLen < right - left ) {
+    //             // console.log(maxLen, right, left, 'RESSSS');
+    //             maxLen = right - left 
+    //         }
+    //     }
+    //     console.log(maxLen);
+    // }
+    
+    // let num = "1110011100011";
+    // let k = 2;
+    // func(num, k);
+
+
+
+    // =====================================================================
+
+
+
+    
+
+// const data = {
+//     "A": "T",
+//     "T": "A",
+//     "C": "G",
+//     "G": "C",
+// }
+
+// function Check(str) {
+
+//     let res = ''
+
+//     for (let t of str) {
+//         if (t in data) {
+//             res += data[t]
+//         } else {
+//             res += t
+//         }
+//     }
+//     return res
+// }
+
+// let str = 'ATSTGC'
+// console.log(Check(str));
+
+//=======================================================================================
+
+
+// let arr = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]
+
+
+// function Check(arr) {
+//     if (arr.indexOf('needle') === -1) {
+//         return res = `Your function didn't return anything`
+//     } else {
+//         return res = `found the needle at position ${arr.indexOf('needle')}`
+//     }
+// }
+
+// console.log(Check(arr));
+
+
+
+// ===================================================================================
+
+
+
+
+// function ChechFunc(str) {
+
+//     let text = str.split('')
+
+//     let res = []
+
+//     for (let i = 0; i < str.length; i++) {
+//         let temp = text[i].repeat(i + 1)
+//         temp = temp.charAt(0).toUpperCase() + temp.slice(1).toLowerCase()
+//         res.push(temp)
+//     }
+//     return res.join('-')
+// }
+
+// let str = "abcd"
+// console.log(ChechFunc(str));
+
+
+
+
+
+// // accum("abcd") -> "A-Bb-Ccc-Dddd"
+// // accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// // accum("cwAt") -> "C-Ww-Aaa-Tttt"
+
+
+
+// ===================================================================================
+
+// function CheckFunc(num) {
+//     let cost = 40
+//     if(num <=0){
+//         return num
+//     }
+
+//     if (num >= 3 && num <= 6) {
+//         return num * cost - 20
+//     }
+
+//     if (num >= 7) {
+//         return num * cost - 50
+//     }
+
+//     return cost * num
+
+// }
+// let num = 2
+// console.log(CheckFunc(num));
+
+
+// =================================================================================
+
+// function CheckFunc(arr, num) {
+//     let obj = {}
+//     let res = []
+//     for (let i = 0; i < arr.length; i++) {
+//         if (!(arr[i] in obj)) {
+//             obj[arr[i]] = 0
+//         }
+//         obj[arr[i]]++
+//         if (obj[arr[i]] <= num) {
+//             res.push(arr[i])
+//         }
+//     }
+//     return res
+// }
+
+// let arr = [1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 7, 2, 2, 2, 2]
+// let num = 3
+// // output = [1, 1, 3, 3, 7, 2, 2, 2]
+
+// console.log(CheckFunc(arr, num));
