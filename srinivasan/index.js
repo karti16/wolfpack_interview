@@ -778,3 +778,74 @@
 // // output = [1, 1, 3, 3, 7, 2, 2, 2]
 
 // console.log(CheckFunc(arr, num));
+
+
+
+// =========================================================================
+
+// // Function to get the numerical value of a letter
+// function getLetterValue(letter) {
+//     const lowerCaseLetter = letter.toLowerCase();
+//     return lowerCaseLetter.charCodeAt(0) - 'a'.charCodeAt(0) + 1;
+// }
+
+
+// function CheckFunc(sentence) {
+
+//     let words = sentence.split(' ')
+//     console.log(words);
+//     let res = 0
+//     let temp = 0
+//     let output = ''
+
+//     for (let w of words) {
+//         let s = w.split('')
+//         s.forEach(element => {
+//             temp += getLetterValue(element)
+//         });
+
+//         if (temp > res) {
+//             res = temp;
+//             output = w
+//         }
+//         temp = 0
+//     }
+//     return output
+// }
+
+// // let sentence = 'man i need a taxi up to ubud'
+// // let sentence = 'take me to semynak'
+// let sentence = 'what time are we climbing up the volcano'
+// console.log(CheckFunc(sentence));
+
+
+// ==================================================================================
+
+
+
+
+// let num = 104033;
+
+// function CheckFunc(num) {
+//     let output = [];
+//     const func = (n) => {
+//         let temp = n.toString().split('');
+//         for (let i = 1; i < temp.length; i++) {
+//             temp[i] = '0';
+//         }
+//         return parseInt(temp.join(''));
+//     }
+//     let firstResult = func(num);
+//     output.push(firstResult);
+    
+//     let remainder = num - firstResult;
+//     while (remainder > 0) {
+//         let part = func(remainder);
+//         output.push(part);
+//         remainder -= part;
+//     }
+
+//     return output.join(' + ');
+// }
+
+// console.log(CheckFunc(num)); 
