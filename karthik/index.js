@@ -1,4 +1,3 @@
-// Q: 1
 /* Implement a function makeCounter that accepts an optional integer 
 value and returns a function. When the returned function is called 
 initially, it returns the initial value if provided, otherwise 0. 
@@ -61,22 +60,86 @@ minBy([{ n: 1 }, { n: 2 }], (o) => o.m); // => undefined
 
 */
 
-function minBy(array, iteratee) {
-  let computed;
-  let result;
+// function minBy(array, iteratee) {
+//   let computed;
+//   let result;
 
-  for (const val of array) {
-    let output = iteratee(val);
+//   for (const val of array) {
+//     let output = iteratee(val);
 
-    if (output != null && (computed === undefined || output < computed)) {
-      computed = output;
-      result = val;
-    }
-  }
+//     if (output != null && (computed === undefined || output < computed)) {
+//       computed = output;
+//       result = val;
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(minBy([2, 3, 1, 4], (num) => num));
-console.log(minBy([{ n: 1 }, { n: 2 }], (o) => o.n));
-console.log(minBy([{ n: 1 }, { n: 2 }], (o) => o.m));
+// console.log(minBy([2, 3, 1, 4], (num) => num));
+// console.log(minBy([{ n: 1 }, { n: 2 }], (o) => o.n));
+// console.log(minBy([{ n: 1 }, { n: 2 }], (o) => o.m));
+
+/* ============================================== ============================================== ==============================================*/
+
+/* Implement a stack data structure in JavaScript that contains the following operations:
+
+  new Stack(): Creates an instance of a Stack class that doesn't contain any items. The constructor does not accept any arguments.
+  push(): Pushes an item onto the top of the stack and returns the new length of the stack. Required time complexity: O(1).
+  pop(): Removes an item at the top of the stack and returns that item. Required time complexity: O(1).
+  isEmpty(): Determines if the stack is empty. Required time complexity: O(1).
+  peek(): Returns the item at the top of the stack without removing it from the stack. Required time complexity: O(1).
+  length(): Returns the number of items in the stack. Required time complexity: O(1).
+
+  const stack = new Stack();
+  stack.isEmpty(); // true
+  stack.push(1);
+  stack.push(2);
+  stack.length(); // 2
+  stack.push(3);
+  stack.peek(); // 3
+  stack.pop(); // 3
+  stack.isEmpty(); // false
+   */
+
+// class Stack {
+//   #array = [];
+//   constructor() {
+//     this.#array = [];
+//   }
+
+//   isEmpty() {
+//     return this.#array.length === 0;
+//   }
+
+//   push(val) {
+//     this.#array.unshift(val);
+//     return this.#array.length;
+//   }
+
+//   length() {
+//     return this.#array.length;
+//   }
+
+//   peek() {
+//     return this.#array[0];
+//   }
+
+//   pop() {
+//     return this.#array.shift();
+//   }
+// }
+
+// const stack = new Stack();
+
+// console.log(stack);
+// console.log(stack.isEmpty());
+// stack.push(1);
+// stack.push(2);
+// console.log(stack.length());
+// console.log(stack.peek());
+// console.log(stack.pop());
+// console.log(stack.length());
+
+
+/* ============================================== ============================================== ==============================================*/
