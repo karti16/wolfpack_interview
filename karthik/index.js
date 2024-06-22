@@ -141,9 +141,7 @@ minBy([{ n: 1 }, { n: 2 }], (o) => o.m); // => undefined
 // console.log(stack.pop());
 // console.log(stack.length());
 
-
 /* ============================================== ============================================== ==============================================*/
-
 
 /* 
 Implement a function that takes one or more values and returns a function that cycles 
@@ -171,5 +169,34 @@ console.log(onOffFn()); // "on"
 // console.log(onOffFn()); // "on"
 // console.log(onOffFn()); // "off"
 // console.log(onOffFn()); // "on"
+
+/* ============================================== ============================================== ==============================================*/
+
+/* Implement a function that performs an insertion sort. 
+The function should take in an array of integers and return an array with the 
+integers sorted in ascending order. The input array is modified. 
+
+insertionSort([9, 3, 6, 2, 1, 11]); // [1, 2, 3, 6, 9, 11]
+insertionSort([12, 16, 14, 1, 2, 3]); // [1, 2, 3, 12, 14, 16]
+*/
+
+// function insertionSort(arr) {
+//   for (let i = 1; i < arr.length; i++) {
+//     let key = arr[i];
+//     let j = i - 1;
+
+//     while (j >= 0 && arr[j] > key) {
+//       arr[j + 1] = arr[j];
+//       j--;
+//     }
+
+//     arr[j + 1] = key;
+//   }
+
+//   return arr;
+// }
+
+// console.log(insertionSort([5, 7, 4, 1, 3, 6, 5, 76]));
+
 
 /* ============================================== ============================================== ==============================================*/
