@@ -821,9 +821,6 @@
 
 // ==================================================================================
 
-
-
-
 // let num = 104033;
 
 // function CheckFunc(num) {
@@ -835,17 +832,665 @@
 //         }
 //         return parseInt(temp.join(''));
 //     }
-//     let firstResult = func(num);
-//     output.push(firstResult);
-    
-//     let remainder = num - firstResult;
-//     while (remainder > 0) {
-//         let part = func(remainder);
+//     while (num > 0) {
+//         let part = func(num);
 //         output.push(part);
-//         remainder -= part;
+//         num -= part;
 //     }
 
 //     return output.join(' + ');
 // }
 
 // console.log(CheckFunc(num)); 
+
+// ========================================================================================
+
+
+
+
+
+// function ChechFunc(words) {
+//     let res = []
+//     const reverseFunction = (word) => {
+//         let last_index = word.length - 1
+//         let str = word.split('')
+//         for (let i = 0; i < word.length / 2; i++) {
+//             let temp = str[i]
+//             str[i] = str[last_index]
+//             str[last_index] = temp
+//             last_index--
+//         }
+//         return str.join('')
+//     }
+
+//     let splittedWords = words.split(' ')
+
+//     for (let w of splittedWords) {
+//         if (w.length >= 5) {
+//             let d = reverseFunction(w)
+//             res.push(d)
+//         } else {
+//             res.push(w)
+//         }
+//     }
+//     return res.join(' ')
+// }
+
+
+// console.log(ChechFunc("Hey fellow warriors"));
+// console.log(ChechFunc("This is a test"));
+// console.log(ChechFunc("This is another test"));
+
+
+
+
+// ================================================================================
+
+
+
+// function CheckRepetition(str) {
+//     if (str.length === 0) {
+//         return false;
+//     }
+
+//     let res = '';
+//     let letters = str.toLowerCase().split('');
+//     let obj = {};
+
+//     for (let letter of letters) {
+//         if (!(letter in obj)) {
+//             obj[letter] = 1;
+//         } else {
+//             obj[letter] += 1;
+//         }
+//     }
+//     for (let letter of letters) {
+//         if (obj[letter] > 1) {
+//             res += ')';
+//         } else {
+//             res += '(';
+//         }
+//     }
+
+//     return res;
+// }
+
+// let str = "Success";
+// console.log(CheckRepetition(str)); // Output: ")())())"
+
+
+// // The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+// // Examples
+// // "din"      =>  "((("
+// // "recede"   =>  "()()()"
+// // "Success"  =>  ")())())"
+// // "(( @"     =>  "))(("
+// // Notes
+// // Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
+
+// // STRINGSARRAYS
+
+
+
+// =======================================================================
+
+
+
+// function firstNonRepeatingChar(str) {
+//     let charCount = {};
+
+//     let lowerStr = str.toLowerCase();
+
+//     for (let char of lowerStr) {
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+//     console.log(charCount, 'RTRTRTRT');
+
+//     for (let char of lowerStr) {
+//         if (charCount[char] === 1) {
+//             return char;
+//         }
+//     }
+
+//     return null; // Return null if no non-repeating character is found
+// }
+
+// console.log(firstNonRepeatingChar('rvtt')); // Output: "r"
+// // console.log(firstNonRepeatingChar('Success')); // Output: "u"
+// // console.log(firstNonRepeatingChar('aabbcc')); // Output: null
+
+// ======================================================================================
+
+
+
+// function Func(arr1, arr2) {
+//     let res = []
+//     const func = (num1, num2) => {
+//         return num1 * num1 === num2
+//     }
+//     for (let i = 0; i < Math.min(arr1.length, arr2.length); i++) {
+//         let temp = func(arr1[i], arr2[i])
+//         res.push(temp)
+//     }
+//     return res.every(s => s === true)
+// }
+
+
+
+// let arr1 = [11, 12, 13, 14, 15, 16, 17, 18]
+// let arr2 = [121, 144, 169, 196, 225, 256, 289, 324]
+
+
+// console.log(Func(arr1, arr2));
+
+
+// ===========================================================================
+
+
+// function lengthOfLongestSubstring(s) {
+//     let n = s.length;
+//     let set = new Set()
+//     let maxLength = 0
+//     let left = 0
+//     let count = 0
+
+//     for (let right = 0; right < n; right++) {
+//         while (set.has(s[right])) {
+//             set.delete(s[left]);
+//             left++
+//         }
+//         console.log(left, 'llllll');
+//         set.add(s[right]);
+//         maxLength = Math.max(maxLength, right - left + 1)
+//     }
+
+//     return maxLength
+// }
+
+// let str = "abccabcbb";
+// console.log(lengthOfLongestSubstring(str)); // Output: 3
+
+
+
+// Method 2
+
+
+// function checkFunc(str) {
+
+//     let n = str.length
+//     let maxLength = 0
+//     let res = []
+
+//     for (let i = 0; i < n; i++) {
+//         while (res.includes(str[i])) {
+//             res.shift()
+//         }
+//         res.push(str[i])
+//         maxLength = Math.max(maxLength, res.length)
+//     }
+
+//     return maxLength;
+// }
+
+// let str = "abcabcbb"
+// console.log(checkFunc(str));
+
+
+
+// ============================================================
+
+
+// String.prototype.Capitalise = function (str) {
+//     let words = this.split(' ')
+//     console.log(words);
+//     let res = []
+
+//     for (let word of words) {
+//         let part = word.charAt(0).toUpperCase() + word.slice(1)
+//         res.push(part)
+//     }
+//     return res.join(' ')
+// }
+// let str = "How can mirrors be real if our eyes aren't real"
+
+// console.log(str.Capitalise());
+
+
+
+// ===================================================================
+
+
+
+// function Check(str) {
+//     let res = {}
+//     let d = 0
+
+//     let converted = str.toLowerCase()
+
+//     for (let e of converted) {
+//         res[e] = (res[e] || 0) + 1
+//     }
+
+//     Object.keys(res).forEach(element => {
+//         if (res[element] > 1) {
+//             d++
+//         }
+//     });
+//     return d
+// }
+
+// let str = 'Indivisibilities'
+
+// console.log(Check(str));
+
+// // "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+
+
+
+
+// ================================================================================
+
+
+
+// function persistence(num) {
+    //     let res = num
+    //     const func = (temp) => {
+    //         let tem = temp.toString().split('')
+    //         let t = 1
+    //         for (let n of tem) {
+    //             t *= parseInt(n)
+    //         }
+    //         return t
+    //     }
+    //     while (res > 10) {
+    
+    //         res = func(res)
+    //     }
+    //     return res
+    // }
+    
+    
+    // console.log(persistence(39));
+
+
+
+    // ================================================================\
+
+
+    // function persistence(num) {
+    //     let count = 0;
+    
+    //     while (num > 10) {
+    //         num = num.toString().split('').reduce((a, b) => a * b);
+    //         count++;
+    //     }
+    
+    //     return count;
+    
+    // }
+    
+    // let num = 999
+    // console.log(num.toString().split('').reduce((a, b) => a * b));
+    
+    
+    // console.log(persistence(100));
+    
+
+
+    // ========================================================================================
+
+
+
+    // function Func(num) {
+
+    //     for (let n of num) {
+    //         if (n > 9) {
+    //             return false
+    //         }
+    //     }
+    
+    //     let part1 = ''
+    //     let part2 = ''
+    //     let part3 = ''
+    
+    
+    //     for (let i = 0; i < num.length; i++) {
+    //         if (i < 3) {
+    //             part1 += num[i]
+    //         }
+    //         if (i >= 3 && i < 6) {
+    //             part2 += num[i]
+    //         }
+    
+    //         if (i >= 6) {
+    //             part3 += num[i]
+    //         }
+    //     }
+    //     return `(${part1}) ${part2}-${part3}`
+    // }
+    
+    
+    // let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    
+    // console.log(Func(numbers));
+    
+    // // => returns "(123) 456-7890"
+    
+    // let format = "(ccc) ccc-cccc";
+    
+    // for (var i = 0; i < numbers.length; i++) {
+    //     format = format.replace('c', numbers[i]);
+    // }
+    
+    //  console.log(format);;
+
+
+
+
+    // ============================================================================
+
+
+    // function Check(arr, k) {
+
+    //     let res = []
+    
+    //     for (let i = 0; i < arr.length; i++) {
+    //         for (let j = i + 1; j < arr.length; j++) {
+    //             while (arr[i] + arr[j] === k) {
+    //                 return [i + 1, j + 1]
+    //             }
+    //         }
+    //     }
+        
+    //     return res
+    // }
+    
+    
+    // let arr = [2, 7, 11, 15]
+    // let k = 4444
+    // console.log(Check(arr, k));
+
+
+    // ==================================================================
+
+
+
+    // function Func(arr, k) {
+
+    //     let target = arr.length - k
+    
+    //     let rotatedPart = arr.slice(0, target);
+    //     let remainingPart = arr.slice(target, arr.length );
+        
+    //     return remainingPart.concat(rotatedPart);
+    // }
+    
+    // let num = [1, 2, 3, 4, 5, 6, 7];
+    // let target = 3;
+    
+    // console.log(Func(num, target)); // Output: [3, 4, 5, 6, 7, 1, 2]
+    
+
+    // ====================================================================================
+
+
+
+    // let arr = [-10, -9, -8, -6, -3, -2, -1, 0, 1, 3, 4, 5, 7, 8, 9, 10, 11, 14, 15, 17, 18, 19, 20];
+// console.log(CheckFunc(arr)); 
+// // Output: "-10--8,-6,-3-1,3-5,7-11,14,15,17-20"
+
+
+// ===============================================================================================================
+
+
+
+
+// function CheckFunc(arr) {
+//     let words = arr.split(' ')
+//     let obj = {}
+//     let res = []
+
+//     let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+//     for (let w of words) {
+//         let temp = w.split('')
+//         for (let f of temp) {
+//             if (numbers.includes(f) ){
+//                 obj[f] = w
+//             }
+//         }
+//     }
+//     for(let f in obj){
+//         res.push(obj[f])
+//     }
+//     return res.join(' ')
+// }
+
+// let arr = "4of Fo1r pe6ople g3ood th5e the2"
+// console.log(CheckFunc(arr));
+// ---------------------------------------------------------------------------------
+
+// function CheckFunc(arr) {
+//     let words = arr.split(' ')
+//     let obj = {}
+//     let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+//     for (let w of words) {
+//         let temp = w.split('')
+//         for (let f of temp) {
+//             if (numbers.includes(f) ){
+//                 obj[f] = w
+//             }
+//         }
+//     }
+//     return Object.values(obj).join(' ')
+// }
+
+// let arr = "4of Fo1r pe6ople g3ood th5e the2"
+// console.log(CheckFunc(arr));
+
+
+
+// // Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+// // Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+// // If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+// // Examples
+// // "is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+// // "4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+// // ""  -->  ""
+
+
+
+// ==================================================================================================
+
+
+
+
+
+// function CheckFunc(arr) {
+//     // Regular expression for matching valid smiley faces
+//     const smileyPattern = [':)', ':D', ';)', ';D', ':-)', ':-D', ';-)', ';-D', ':~)', ':~D', ';~)', ';~D']
+
+//     let count = 0;
+
+//     for (let face of arr) {
+//         if (smileyPattern.includes(face)) {
+//             count += 1;
+//         }
+//     }
+
+//     return count;
+// }
+
+
+// let arr = [';]', ':[', ';*', ':$', ';-D']
+
+// console.log(CheckFunc(arr));
+
+
+
+// // Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+
+// // Rules for a smiling face:
+
+// // Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+// // A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+// // Every smiling face must have a smiling mouth that should be marked with either ) or D
+// // No additional characters are allowed except for those mentioned.
+
+// // Valid smiley face examples: :) :D ;-D :~)
+// // Invalid smiley faces: ;( :> :} :]
+
+// // Example
+// // countSmileys([':)', ';(', ';}', ':-D']);       // should return 2;
+// // countSmileys([';D', ':-(', ':-)', ';~)']);     // should return 3;
+// // countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
+// // Note
+// // In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
+
+
+
+
+
+
+
+// ==========================================================================================
+
+// function validatePIN(pin) {
+   
+//     if (arr.length !== 4 && arr.length !== 6) {
+//         return false
+//     }
+//     let number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+//     for(let n of arr){
+//         if(!(number.includes(n))){
+//             return false
+//         }
+//     }
+
+//     return true
+// }
+
+
+// console.log(validatePIN("1234"));  
+
+// ========================================================================================
+
+
+
+// function CheckFunc(arr) {
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr.slice(0, i).reduce((a, b) => a + b, 0) === arr.slice(i + 1, arr.length).reduce((a, b) => a + b, 0)) {
+//             return i
+//         }
+//     }
+//     return -1
+// }
+
+// let arr = [10, -80, 10, 10, 15, 35, 20]
+// console.log(CheckFunc(arr));
+
+
+// // You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N.
+
+// // If there is no index that would make this happen, return -1.
+
+// // For example:
+// // Let's say you are given the array {1,2,3,4,3,2,1}:
+// // Your function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.
+
+// // Let's look at another one.
+// // You are given the array {1,100,50,-51,1,1}:
+// // Your function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.
+
+// // Last one:
+// // You are given the array {20,10,-80,10,10,15,35}
+// // At index 0 the left side is {}
+// // The right side is {10,-80,10,10,15,35}
+// // They both are equal to 0 when added. (Empty arrays are equal to 0 in this problem)
+// // Index 0 is the place where the left side and right side are equal.
+
+// // Note: Please remember that in most languages the index of an array starts at 0.
+
+// // Input
+// // An integer array of length 0 < arr < 1000. The numbers in the array can be any integer positive or negative.
+
+// // Output
+// // The lowest index N where the side to the left of N is equal to the side to the right of N. If you do not find an index that fits these rules, then you will return -1.
+
+// // Note
+// // If you are given an array with multiple answers, return the lowest correct index.\
+
+
+
+// ===========================================================================================================================
+
+
+
+// function CheckFunc(num) {
+
+//     if (num < 1) {
+//         return 0
+//     }
+//     let res = 0
+//     for (let i = 1; i < num; i++) {
+//         if (i % 3 === 0 || i % 5 === 0) {
+//             res += i
+//         }
+        
+//     }
+//     return res
+
+// }
+
+// let num = 10
+
+// console.log(CheckFunc(num));
+
+// // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// // Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// // Additionally, if the number is negative, return 0.
+
+// // Note: If the number is a multiple of both 3 and 5, only count it once.
+
+// // Courtesy of projecteuler.net (Problem 1)
+
+
+
+// ===================================================================================
+
+
+// Find the First Non-Repeated Character.
+
+
+
+// function CheckFunc(str) {
+//     console.log(str);
+
+//     let string = str.toLowerCase().split('')
+//     if (!string.length) {
+//         return ''
+//     }
+//     let obj = {}
+
+//     for (let i = 0; i < string.length; i++) {
+//         obj[string[i]] = (obj[string[i]] || 0) + 1
+//     }
+
+//     for (let l of string) {
+//         if (obj[l] === 1) {
+//             return l
+//         }
+//     }
+
+//     return 'No non-repeating letters'
+// }
+
+// let string = 'abcdabcd'
+
+// console.log(CheckFunc(string));
