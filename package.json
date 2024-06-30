@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "karthik": "nodemon karthik/index.js",
+    "karthik-ts": "nodemon karthik/index.ts",
     "hari": "nodemon hari/index.js",
     "srinivasan": "nodemon srinivasan/index.js",
     "karan": "nodemon karan/index.js"
@@ -15,5 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "nodemon": "^3.1.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
   }
 }
