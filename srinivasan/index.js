@@ -1494,3 +1494,398 @@
 // let string = 'abcdabcd'
 
 // console.log(CheckFunc(string));
+
+
+// ======================================================================
+
+
+// function CheckFunc(N) {
+    //     let temp = N;
+    
+    //     while (temp >= 10) {  
+    //         let num = temp.toString().split(''); 
+    //         temp = 0; 
+    //         for (let t of num) {
+    //             temp += parseInt(t); 
+    //         }
+    //     }
+    
+    //     return temp;
+    // }
+    
+    // let num = 132189;
+    // console.log(CheckFunc(num));
+    
+
+    // ===============================================================================
+
+
+// function CheckFunc(str) {
+//     let string = str.split('')
+//     let res = []
+//     for (let i = 0; i < string.length; i++) {
+//         let temp = string[i] + (string[i + 1] !== undefined ? string[i + 1] : '_')
+//         res.push(temp)
+//         i++;
+//     }
+//     return res
+// }
+
+// let str = 'abc'
+// console.log(CheckFunc(str));
+
+// // Complete the solution so that it splits the string into pairs of two characters.
+// //  If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+
+
+
+
+// ===============================================================
+
+
+
+
+
+// function CheckFunc(num) {
+
+//     let stringNumber = num.toString().split('')
+//     let res = 0
+//     for (let n of stringNumber) {
+//         let num = parseInt(n)
+//         res += Math.pow(num, stringNumber.length)
+//     }
+//     return res
+// }
+
+// let num = 153
+
+// console.log(CheckFunc(num));
+
+
+// ============================================
+
+
+
+// function CheckFunc(arr, N) {
+
+//     let obj = {}
+
+//     let res = []
+
+//     for (let n of arr) {
+//         obj[n] = (obj[n] || 0) + 1
+//     }
+
+//     for (let n of arr) {
+//         let filteredVal = res.filter(e => e === n).length
+//         if (filteredVal < N) {
+//             res.push(n)
+//         }
+//     }
+
+//     return res
+
+// }
+
+
+
+
+
+
+
+// let arr = [20,37,20,21]
+// let num = 1
+// // 1), [20,37,21]
+// console.log(CheckFunc(arr, num));
+
+
+
+
+// // Enough is enough!
+// // Alice and Bob were on a holiday. Both of them took many pictures of the places they've been, and now they want to show Charlie their entire collection. However, Charlie doesn't like these sessions, since the motif usually repeats. He isn't fond of seeing the Eiffel tower 40 times.
+// // He tells them that he will only sit for the session if they show the same motif at most N times. Luckily, Alice and Bob are able to encode the motif as a number. Can you help them to remove numbers such that their list contains each number only up to N times, without changing the order?
+
+// // Task
+// // Given a list and a number, create a new list that contains each number of list at most N times, without reordering.
+// // For example if the input number is 2, and the input list is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
+// // With list [20,37,20,21] and number 1, the result would be [20,37,21].
+
+
+
+
+// ==================================================================
+
+
+
+
+
+
+// function CheckFunc(str) {
+
+//     let seperatedLetters = str.toLowerCase().split('')
+//     let res = []
+//     for (let l of seperatedLetters) {
+//         let num = l.charCodeAt(0) - 96
+//         if (num > 0 && num < 27) {
+//             res.push(num)
+//         }
+//     }
+//     return res.join(' ')
+// }
+
+
+// let Input = "The sunset sets at twelve o' clock."
+// console.log(CheckFunc(Input));
+
+
+// ==========================================================================
+
+
+// function longestPalindrome(s) {
+//     // if (s.length > 1) {
+//     //     return s
+//     // }
+
+//     let largestStr = ''
+//     for (let i = 0; i < s.length; i++) {
+//         for (let j = 0; j < s.length; j++) {
+//             console.log(i, j + 1);
+//             let currentString = s.substring(i, j + 1)
+//             if (currentString === currentString.split('').reverse().join('') && currentString.length > largestStr.length) {
+//                 // console.log(currentString);
+//                 largestStr = currentString
+//             }
+//         }
+
+//     }
+//     return largestStr
+// }
+
+// // console.log(longestPalindrome("baabad")); // Output: "baab" or "aba"
+// // console.log(longestPalindrome("cbbd"));   // Output: "bb"
+// // console.log(longestPalindrome("a"));      // Output: "a"
+// // console.log(longestPalindrome("ac"));     // Output: "a" or "c"
+
+// let dd = 'baabad'
+// console.log(dd.substring(2,3));
+
+// ==================================================================
+
+
+
+
+
+// function twoSum(arr, target) {
+
+//     let res = []
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] + arr[j] === target){
+//                 res.push(i, j)
+//             }
+
+//         }
+//     }
+//     return res
+
+// }
+
+
+
+// // console.log(twoSum([2, 7, 11, 15], 9));  // Output: [0, 1]
+// // console.log(twoSum([3, 2, 4], 6));       // Output: [1, 2]
+// console.log(twoSum([3, 3], 6));          // Output: [0, 1]
+
+
+// ==============================================================================
+
+
+
+
+// function findLongestWord(str) {
+
+//     const clearedString = (word) => {
+//         let res = ''
+//         let temp = word.toLowerCase().split('')
+//         for (let w of temp) {
+//             if (w.charCodeAt(0) - 96 > 0 && w.charCodeAt(0) - 96 < 27 || w >= 0 && w <= 9) {
+//                 res += w
+//             } else {
+//                 break
+//             }
+//         }
+//         return res
+//     }
+
+//     let stringWords = str.split(' ')
+
+//     let max = 0
+//     for (let word of stringWords) {
+//         let res = clearedString(word)
+//         if (res.length > max) {
+//             max = res.length
+//         }
+//     }
+//     console.log(max);
+//     return max
+
+// }
+
+
+
+
+// findLongestWord("Hello world"); // Should return 5 (for "Hello")
+// findLongestWord("The quick brown fox jumped over the lazy dog."); // Should return 6 (for "jumped")
+// findLongestWord("1234567890"); // Should return 10 (since it's all one word)
+// findLongestWord("A!!@#$%^&*()_+=-B"); // Should return 1 (for "A" or "B")
+
+
+
+// =========================================
+
+
+
+// function countCharacters(str) {
+
+//     let splittedString = str.toLowerCase().split('')
+
+//     let obj = {}
+
+//     for (let w of splittedString) {
+//         if (w !== ' ') {
+//             obj[w] = (obj[w] || 0) + 1
+
+//         }
+//     }
+//     console.log(obj);
+//     return obj
+// }
+
+
+// countCharacters("Hello"); // Should return { h: 1, e: 1, l: 2, o: 1 }
+// countCharacters("Hello world!"); // Should return { h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1, '!': 1 }
+// countCharacters("12345"); // Should return { '1': 1, '2': 1, '3': 1, '4': 1, '5': 1 }
+// countCharacters(""); // Should return {}
+
+
+// ========================================================
+
+
+
+// function findMissingNumber(arr) {
+
+//     const n = arr.length;
+//     let expectedSum = 0;
+
+//     for (let i = 0; i <= n; i++) {
+//         expectedSum += i;
+//     }
+//     const actualSum = arr.reduce((sum, num) => sum + num, 0);
+
+//     console.log(expectedSum - actualSum);
+
+// }
+
+
+// findMissingNumber([3, 0, 1]); // Should return 2
+// findMissingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]); // Should return 8
+// findMissingNumber([0, 1, 2, 3, 4, 5]); // Should return 6
+
+
+
+
+// ======================================================================
+
+
+
+
+
+
+// function CheckFunc(str) {
+
+//     let arrStr = str.toLowerCase().split('')
+//     console.log(arrStr);
+//     let res = []
+
+//     for (let l of arrStr) {
+//         if (l !== ' ') {
+//             let temp = l.charCodeAt(0) - 96
+//             res.push(temp)
+//         }
+//     }
+
+//     for (let i = 1; i < 27; i++){
+//         if((!res.includes(i))){
+//             return false
+//         }
+//     }
+//     return true
+// }
+
+// let str = "The quick brown fox jumps over the lazy dog"
+
+// console.log(CheckFunc(str));
+
+
+
+
+// ==========================================
+
+
+
+
+// Write a program that, given a word, computes the scrabble score for that word.
+
+// Letter Values
+// You'll need these:
+
+// Letter                           Value
+// A, E, I, O, U, L, N, R, S, T       1
+// D, G                               2
+// B, C, M, P                         3
+// F, H, V, W, Y                      4
+// K                                  5
+// J, X                               8
+// Q, Z                               10
+// There will be a preloaded hashtable $dict with all these values: $dict["E"] == 1.
+
+// Examples
+// "cabbage" --> 14
+// "cabbage" should be scored as worth 14 points:
+
+// 3 points for C
+// 1 point for A, twice
+// 3 points for B, twice
+// 2 points for G
+// 1 point for E
+// And to total:
+
+// 3 + 2*1 + 2*3 + 2 + 1 = 3 + 2 + 6 + 3 = 14
+
+// Empty string should return 0. The string can contain spaces and letters (upper and lower case), you should calculate the scrabble score only of the letters in that string.
+
+// ""           --> 0
+// "STREET"    --> 6
+// "st re et"    --> 6
+// "ca bba g  e" --> 14
+
+
+// function CheckFunc(str) {
+//     let obj2 = { '1': 'AEIOULNRST', '2': 'DG', '3': 'BCMP', '4': 'FHVWY', '5': 'K', '8': 'JX', '10': 'QZ' }
+//     let arrStr = str.toLowerCase().split('')
+//     let keys = Object.keys(obj2)
+//     let res = 0
+//     for (let i = 0; i < arrStr.length; i++) {
+//         for (let k of keys) {
+//             if (obj2[k].includes(arrStr[i].toUpperCase())) {
+//                 let num = parseInt(k)
+//                 res += num
+//             }
+//         }
+
+//     }
+//     return res
+// }
+// let str = '"STREET"'
+// console.log(CheckFunc(str));
